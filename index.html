@@ -30,34 +30,7 @@
                         <div class="offcanvas-body"><!--cart checkout-->
                             <div class="no-items">No item</div>
                             <div class="container">
-                                <div class="row" id="cart-items"><!--cart items row container-->
-                                    <!--<div class="col-12 cart-items">
-                                        <div class="row">
-                                            <div class="col-4 image">
-                                                <img src="./images/product-images/bar-necklace-lg.jpeg" alt="">
-                                            </div>
-                                            <div class="col-8 details">
-                                                <div class="name_cancel">
-                                                    <div class="name">
-                                                        <div class="product-name">Bold Small Hoops</div>
-                                                        <div class="seller">Swarovzki</div>
-                                                    </div>
-                                                    <div class="cancel-product">
-                                                        <button>x</button>
-                                                    </div>
-                                                </div>
-                                                <div class="quant_price">
-                                                    <div class="quant">
-                                                        <button class="minus">-</button>
-                                                        <div class="quantity">1</div>
-                                                        <button class="add">+</button>
-                                                    </div>
-                                                    <div class="priceDiv">$<span class="price">350</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> <!--end of 1 cart item-->
-                                </div><!--end of items row-->
+                                <div class="row" id="cart-items"></div><!--end of items row-->
                                 <div class="order-summary hide">
                                     <h5 class="bold">Order Summary</h5>
                                     <div>
@@ -100,18 +73,29 @@
 
     <section id="hero">
         <div class="container-fluid">
-            <div class="row">
-                <div class="col-12 col-lg-6">
-                    <div class="hero-img">
-                        <img class="img-fluid" src="./images/hero-lg.webp" alt="">
+            <div class="hero-img">
+                <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel" data-interval="50">
+                    <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="./images/ClaudeHome_DT.webp" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/DiamondIDTags_DT.webp" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item">
+                        <img src="./images/Emerald_DT.webp" class="d-block w-100" alt="...">
+                    </div>
                     </div>
                 </div>
-                <div class="col-12 col-lg-6">
-                    <div class="decr">
-                        <h1>Hand crafted and responsibly sourced</h1>
-                        <p>We curate fine jewelry that you can wear every single day.</p>
-                        <p>We work with expert jewelers who use high-quality and enduring materials, from precious metals—such as recycled and responsibly mined gold—to responsibly sourced diamonds and AAA-grade gemstones.</p>
-                    </div>
+                <div class="intro">
+                    <h1 >Handcrafted and Responsibly Sourced</h1>
+                    <p>We use high-quality and enduring materials, from precious metals—such as recycled and responsibly mined gold—to responsibly sourced diamonds and AAA-grade gemstones.</p>
+                    <div><a href="#product-list">Shop Now</a></div>
                 </div>
             </div>
         </div>
@@ -143,7 +127,7 @@
     </section>
 
     <section id="products">
-        <div class="container-fluid">
+        <div class="container-fluid px-lg-5">
             <div id="product-list" class="row gy-5"></div>
         </div>
     </section>
