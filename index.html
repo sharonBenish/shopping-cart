@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="./styles/style.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="navig">
+        <nav>
+            <div class="menu-btn">
+                <img src="./images/hamburger.png" alt="">
+            </div>
+
+            <div class="store-logo"><img src="./images/pandora-logo.svg" alt=""></div>
+
+            <div class="store-icons">
+                <div class="cart">
+                    <button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"><img src="./images/shopping-bag (1).png" alt=""></button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasRightLabel">Cart Checkout</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body"><!--cart checkout-->
+                            <div class="no-items">No item</div>
+                            <div class="container">
+                                <div class="row" id="cart-items"><!--cart items row container-->
+                                    <!--<div class="col-12 cart-items">
+                                        <div class="row">
+                                            <div class="col-4 image">
+                                                <img src="./images/product-images/bar-necklace-lg.jpeg" alt="">
+                                            </div>
+                                            <div class="col-8 details">
+                                                <div class="name_cancel">
+                                                    <div class="name">
+                                                        <div class="product-name">Bold Small Hoops</div>
+                                                        <div class="seller">Swarovzki</div>
+                                                    </div>
+                                                    <div class="cancel-product">
+                                                        <button>x</button>
+                                                    </div>
+                                                </div>
+                                                <div class="quant_price">
+                                                    <div class="quant">
+                                                        <button class="minus">-</button>
+                                                        <div class="quantity">1</div>
+                                                        <button class="add">+</button>
+                                                    </div>
+                                                    <div class="priceDiv">$<span class="price">350</span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div> <!--end of 1 cart item-->
+                                </div><!--end of items row-->
+                                <div class="order-summary hide">
+                                    <h5 class="bold">Order Summary</h5>
+                                    <div>
+                                        <div>Sub Total</div>
+                                        <div>$<span class="sub-total">300</span></div>
+                                    </div>
+                                    <div>
+                                        <div>Shipping Fee</div>
+                                        <div>Free</div>
+                                    </div>
+                                    <div class="bold">
+                                        <div>Estimated total</div>
+                                        <div>$<span class="total">600</span></div>
+                                    </div>
+                                </div>
+                                <div class="checkout-btn hide">
+                                    <button>Continue to checkout</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-counter">0</div>
+                <div class="favorites"><button type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight2" aria-controls="offcanvasRight"><img src="./images/love.png" alt=""></button>
+
+                    <div class="offcanvas offcanvas-end" tabindex="-2" id="offcanvasRight2" aria-labelledby="offcanvasRight2Label">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasRight2Label">Favorites</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body"><!--liked items-->
+                            Favorites
+                        </div>
+                    </div></div>
+                
+
+            </div>
+        </nav>
+    </div>
+
+    <section id="hero">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 col-lg-6">
+                    <div class="hero-img">
+                        <img class="img-fluid" src="./images/hero-lg.webp" alt="">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="decr">
+                        <h1>Hand crafted and responsibly sourced</h1>
+                        <p>We curate fine jewelry that you can wear every single day.</p>
+                        <p>We work with expert jewelers who use high-quality and enduring materials, from precious metals—such as recycled and responsibly mined gold—to responsibly sourced diamonds and AAA-grade gemstones.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="shopping-controls">
+            <div id="filter-btn" class="btn-group">
+                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Category
+                </button>
+                <ul class="dropdown-menu">
+                    <li class="dropdown-item" data-filter="all">All</li>
+                    <li class="dropdown-item" data-filter="earring">Earrings</li>
+                    <li class="dropdown-item" data-filter="necklace">Necklace</li>
+                    <li class="dropdown-item" data-filter="bracelet">Bracelet</li>
+                    <li class="dropdown-item" data-filter="ring">Rings</li>
+                </ul>
+              </div>
+              <div id="sort-btn" class="btn-group">
+                <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Sort
+                  </button>
+                  <ul class="dropdown-menu">
+                      <li class="dropdown-item">All</li>
+                      <li class="dropdown-item">Highest to lowest </li>
+                      <li class="dropdown-item">Lowest to Highest </li>
+                  </ul>
+              </div>
+    </section>
+
+    <section id="products">
+        <div class="container-fluid">
+            <div id="product-list" class="row gy-5"></div>
+        </div>
+    </section>
+    
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    <script src="./app/script.js"></script>
+    <script src="./app/filter.js"></script>
+    <script src="./app/cart.js"></script>
+    <script src="./app/fav.js"></script>
+</body>
+</html>
