@@ -62,9 +62,10 @@
                             <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div class="offcanvas-body"><!--liked items-->
-                            Favorites
+                            <div class="row" id="favorites"></div>
                         </div>
-                    </div></div>
+                    </div>
+                </div>
                 
 
             </div>
@@ -119,9 +120,9 @@
                     Sort
                   </button>
                   <ul class="dropdown-menu">
-                      <li class="dropdown-item">All</li>
-                      <li class="dropdown-item">Highest to lowest </li>
-                      <li class="dropdown-item">Lowest to Highest </li>
+                      <li class="dropdown-item" data-sort="all">All</li>
+                      <li class="dropdown-item" data-sort="high-to-low">Highest to lowest </li>
+                      <li class="dropdown-item" data-sort="low-to-high">Lowest to Highest </li>
                   </ul>
               </div>
     </section>
@@ -140,5 +141,6 @@
     <script src="./app/filter.js"></script>
     <script src="./app/cart.js"></script>
     <script src="./app/fav.js"></script>
+    <script src="./app/sort.js"></script>
 </body>
 </html>

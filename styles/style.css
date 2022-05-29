@@ -124,7 +124,7 @@ nav img{
 .intro a:active{
     transform: scale(0.98);
     background-color: #262627;
-    
+
 }
 
 #filter-btn,#sort-btn{
