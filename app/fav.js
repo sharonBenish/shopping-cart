@@ -1,7 +1,7 @@
 const favoritesDiv = document.getElementById("favorites");
 const cards = productList.querySelectorAll(".card");
 let likedItems =[];
-​
+
 cards.forEach(card => card.addEventListener("click", e=>{
     const el = e.target;
     const cardName = card.querySelector(".product-name").textContent.trim();
@@ -27,7 +27,7 @@ cards.forEach(card => card.addEventListener("click", e=>{
     addToFavorites();
 })
 )
-​
+
 function addToFavorites(){
    const liked = likedItems.map( item =>`<div class="col-12 favItems">
                                             <div class="row">
@@ -49,9 +49,8 @@ function addToFavorites(){
                                     
     )
     favoritesDiv.innerHTML = liked;
-​
 }
-​
+
 favoritesDiv.addEventListener("click", (e)=>{
     const key = e.target;
     const productName = key.parentElement.parentElement.querySelector(".product-name").textContent.trim();
@@ -64,7 +63,7 @@ favoritesDiv.addEventListener("click", (e)=>{
         console.log(allProducts);
         console.log(likedItems);
         addToFavorites();
-​
+
         cards.forEach( card => {
             const cardName = card.querySelector(".product-name").textContent.trim();
             if (cardName == productName){
