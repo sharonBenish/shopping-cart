@@ -81,7 +81,7 @@ function addToCartHTML(){
                 </div>`
         })
     
-        cartItems.innerHTML =items;
+        cartItems.innerHTML =items.join("");
         var sum = productsInCart.map(product => {return product.count * product.price}).reduce((a,b)=>a +b ,0);
         orderSummary.querySelector(".sub-total").innerHTML = sum;
         orderSummary.querySelector(".total").innerHTML = sum;
@@ -123,7 +123,7 @@ cartItems.addEventListener("click", (e)=>{
             productsInCart[indx].count -=1; 
         }
         if (productsInCart[indx].count <= 0){
-            productsInCart.splice(indx,1);
+           productsInCart.splice(indx,1);
         }
     }
     addToCounter();
