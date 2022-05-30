@@ -215,9 +215,9 @@ img{
 }
 
 .fav{
-    width:20px;
-    height: 20px;
-    margin-top:-4px;
+    width:15px;
+    height: 15px;
+    margin-top:-8px;
 }
 
 .fav:hover{
@@ -227,7 +227,11 @@ img{
 
 .product-name, .product-price{
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.7rem;
+}
+
+.seller{
+    font-size: 0.5rem;
 }
 
 .add-to-cart{
@@ -256,6 +260,10 @@ img{
     overflow: visible;
     opacity: 1;
     transform: translateY(-20%);
+}
+
+.card-body{
+    padding-bottom: 3px!important;
 }
 
 .hide{
@@ -361,6 +369,20 @@ img{
 
     .intro a{
         padding:10px 15px;
+    }
+
+    .fav{
+        width:20px;
+        height: 20px;
+        margin-top:-4px;
+    }
+    
+    .product-name, .product-price{
+        font-size: 1rem;
+    }
+    
+    .seller{
+        font-size: 0.7rem;
     }
 }
 
