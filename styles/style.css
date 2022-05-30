@@ -354,6 +354,11 @@ img{
   .footer {
     background: #D6B59F;
     padding: 0 50px;
+    font-size: 0.6rem;
+  }
+
+  .footer h5{
+      font-size: 0.8rem;
   }
 
 
@@ -399,6 +404,15 @@ img{
     .intro a{
         padding:15px 20px;
     }
+    .footer {
+        background: #D6B59F;
+        padding: 0 50px;
+        font-size: 0.7rem;
+      }
+    
+      .footer h5{
+          font-size: 1rem;
+      }
 }
 
 @media (min-width:1200px){
