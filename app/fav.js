@@ -49,6 +49,7 @@ function addToFavorites(){
                                     
     )
     favoritesDiv.innerHTML = liked;
+
 }
 
 favoritesDiv.addEventListener("click", (e)=>{
