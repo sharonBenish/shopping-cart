@@ -126,36 +126,7 @@ cartItems.addEventListener("click", (e)=>{
             productsInCart.splice(indx,1);
         }
     }
-
+    addToCounter();
     addToCartHTML();
 
 })
-
-
-
-                                    /*<div class="col-12 cart-items">
-                                        <div class="row">
-                                            <div class="col-4 image">
-                                                <img src="./images/product-images/bar-necklace-lg.jpeg" alt="">
-                                            </div>
-                                            <div class="col-8 details">
-                                                <div class="name_cancel">
-                                                    <div class="name">
-                                                        <div class="product-name">Bold Small Hoops</div>
-                                                        <div class="seller">Swarovzki</div>
-                                                    </div>
-                                                    <div class="cancel-product">
-                                                        <button class="cancel-btn">x</button>
-                                                    </div>
-                                                </div>
-                                                <div class="quant_price">
-                                                    <div class="quant">
-                                                        <button class="minus">-</button>
-                                                        <div class="quantity">1</div>
-                                                        <button class="add">+</button>
-                                                    </div>
-                                                    <div class="priceDiv">$<span class="price">350</span></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div> */

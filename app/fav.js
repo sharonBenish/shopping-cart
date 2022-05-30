@@ -1,95 +1,77 @@
-const favItems = document.getElementById('fav-items');
-let productsInFav = []
-
-productList.addEventListener("click", e=>{
+const favoritesDiv = document.getElementById("favorites");
+const cards = productList.querySelectorAll(".card");
+let likedItems =[];
+​
+cards.forEach(card => card.addEventListener("click", e=>{
     const el = e.target;
+    const cardName = card.querySelector(".product-name").textContent.trim();
+    const idx = allProducts.findIndex(product => product.name == cardName);
+    console.log(idx);
+    console.log(cardName);
+    //console.log(el);
     if(el.classList.contains("like-icon")){
         el.classList.toggle("liked");
         if (el.classList.contains("liked")){
-            el.src="./images/5056750251537355865.svg"
+            el.src="./images/5056750251537355865.svg";
+            allProducts[idx].liked = true;
+            console.log(allProducts);
+            likedItems.push(allProducts[idx]);
         } else{
-            el.src = "./images/love.png"
+            el.src = "./images/love.png";
+            allProducts[idx].liked = false;
+            console.log(allProducts);
+            likedItems = likedItems.filter(item => item.name !== cardName);
         }
     }
-
-    if (el.classList.contains('like-icon')) {
-        const item = el.parentNode.parentNode.parentNode.parentNode.parentNode;
-        const name = item.querySelector(".product-name").textContent.trim();
-        const price = item.querySelector(".price").textContent.trim();
-        const seller = item.querySelector(".seller").textContent.trim();
-        const image = item.querySelector(".product-image").src;
-
-        const product = {
-            name:name,
-            price:+ price,
-            seller:seller,
-            image:image,
-            count:1,
-            id:String(Date.now())
-        }
-        addToFavList(product);
-        addToFavHTML();
-    }
+    console.log(likedItems);
+    addToFavorites();
 })
-
-function addToFavList(product) {
-    if (productsInFav.length > 0) {
-        for (item of productsInFav) {
-            if (product.name == item.name) {
-                item.count += 1;
-                console.log(productsInFav)
-                return;
-            }
-        }
-    }
-    productsInFav.push(product);
-    console.log(productsInFav);   
+)
+​
+function addToFavorites(){
+   const liked = likedItems.map( item =>`<div class="col-12 favItems">
+                                            <div class="row">
+                                                <div class="col-4 image"><img src=${item.image} alt=""></div>
+                                                <div class="col-8 details">
+                                                    <div class="name_cancel">
+                                                        <div class="name">
+                                                            <div class="product-name">${item.name}</div>
+                                                            <div class="seller">${item.seller}</div>
+                                                            <div>$<span class="price">${item.price}</span></div>
+                                                        </div>
+                                                        <div class="cancel-product">
+                                                            <button class="cancel-btn">x</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>`
+                                    
+    )
+    favoritesDiv.innerHTML = liked;
+​
 }
-
-function addToFavHTML() {
-    if (productsInFav.length > 0) {
-        noItemsMsg.classList.add("hide");
-        const items = productsInFav.map(product => {
-            return `<div class="col-12 cart-items">
-                    <div class="row">
-                        <div class="col-4 image">
-                            <img src=${product.image} alt="" class="product-image">
-                        </div>
-                        <div class="col-8 details">
-                            <div class="name_cancel">
-                                <div class="name">
-                                    <div class="product-name">${product.name}</div>
-                                    <div class="seller">${product.seller}</div>
-                                    <h4>$${product.price}</h4>
-                                </div>
-                                <div class="cancel-product">
-                                    <button class="cancel-btn" data-id=${product.id}>x</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>`
-        })
-        favItems.innerHTML =items;
-        checkoutBtn.classList.remove("hide");
-    } else {
-        favItems.innerHTML = "No item";
-    }    
-}
-
-favItems.addEventListener("click", (e) => {
+​
+favoritesDiv.addEventListener("click", (e)=>{
     const key = e.target;
-    const parentItem = key.parentNode.parentNode.parentNode;
-    console.log(parentItem);
-
-    const cancelBtn = e.target.classList.contains("cancel-btn");
-
-    if (cancelBtn) {
-        if (key.classList.contains("liked")) {
-            el.src = "./images/love.png"
-        }
-        productsInFav = productsInFav.filter(product=> product.id != key.dataset.id)
-        console.log(productsInFav);
+    const productName = key.parentElement.parentElement.querySelector(".product-name").textContent.trim();
+    console.log(productName)
+    if(key.className == "cancel-btn"){
+            
+        likedItems = likedItems.filter(item => item.name !== productName);
+        const idx = allProducts.findIndex(product => product.name == productName);
+        allProducts[idx].liked = false;
+        console.log(allProducts);
+        console.log(likedItems);
+        addToFavorites();
+​
+        cards.forEach( card => {
+            const cardName = card.querySelector(".product-name").textContent.trim();
+            if (cardName == productName){
+                const icon = card.querySelector(".like-icon");
+                icon.src =  "./images/love.png";
+                icon.classList.remove("liked");
+            }
+        })
     }
-    addToFavHTML();
 })
