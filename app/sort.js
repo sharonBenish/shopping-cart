@@ -15,4 +15,5 @@ sorts.addEventListener("click", e=>{
     console.log(allProducts);
     productList.innerHTML="";
     render(sortedList);
+    likeFunctionality(sortedList)
 })

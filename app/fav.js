@@ -1,32 +1,36 @@
 const favoritesDiv = document.getElementById("favorites");
-const cards = productList.querySelectorAll(".card");
-let likedItems =[];
 
-cards.forEach(card => card.addEventListener("click", e=>{
-    const el = e.target;
-    const cardName = card.querySelector(".product-name").textContent.trim();
-    const idx = allProducts.findIndex(product => product.name == cardName);
-    console.log(idx);
-    console.log(cardName);
-    //console.log(el);
-    if(el.classList.contains("like-icon")){
-        el.classList.toggle("liked");
-        if (el.classList.contains("liked")){
-            el.src="./images/5056750251537355865.svg";
-            allProducts[idx].liked = true;
-            console.log(allProducts);
-            likedItems.push(allProducts[idx]);
-        } else{
-            el.src = "./images/love.png";
-            allProducts[idx].liked = false;
-            console.log(allProducts);
-            likedItems = likedItems.filter(item => item.name !== cardName);
+let likedItems =[];
+function likeFunctionality(listOfItems){
+    const cards = productList.querySelectorAll(".card");
+    console.log([...cards]);
+    cards.forEach(card => card.addEventListener("click", e=>{
+        const el = e.target;
+        const cardName = card.querySelector(".product-name").textContent.trim();
+        const idx =listOfItems.findIndex(product => product.name == cardName);
+        //console.log(idx);
+        //console.log(cardName);
+        //console.log(el);
+        if(el.classList.contains("like-icon")){
+            el.classList.toggle("liked");
+            if (el.classList.contains("liked")){
+                el.src="./images/5056750251537355865.svg";
+                listOfItems[idx].liked = true;
+                console.log(listOfItems);
+                likedItems.push(listOfItems[idx]);
+            } else{
+                el.src = "./images/love.png";
+                listOfItems[idx].liked = false;
+                console.log(listOfItems);
+                likedItems = likedItems.filter(item => item.name !== cardName);
+            }
         }
-    }
-    console.log(likedItems);
-    addToFavorites();
-})
-)
+        console.log(likedItems);
+        addToFavorites();
+    })
+    )
+}
+
 
 function addToFavorites(){
    const liked = likedItems.map( item =>`<div class="col-12 favItems">
@@ -52,9 +56,12 @@ function addToFavorites(){
 
 }
 
+likeFunctionality(allProducts)
+
 favoritesDiv.addEventListener("click", (e)=>{
     const key = e.target;
     const productName = key.parentElement.parentElement.querySelector(".product-name").textContent.trim();
+    const cards = productList.querySelectorAll(".card");
     console.log(productName)
     if(key.className == "cancel-btn"){
             

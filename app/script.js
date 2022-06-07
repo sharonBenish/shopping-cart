@@ -140,6 +140,7 @@ function render(data){
         const product = document.createElement("div");
         product.classList.add("col-6", "col-md-4", "col-xxl-3");
         product.dataset.category = x.category;
+
         product.innerHTML =`<div class="card">
                                 <img src=${x.image} alt="...">
                                 <div class="card-body">
@@ -160,7 +161,12 @@ function render(data){
                                 </div>
                                 <button class="add-to-cart">Add to cart</button>
                             </div>`
+
+            if (x.liked){
+                const likeBtn = product.querySelector(".like-icon");
+                likeBtn.classList.add("liked");
+                likeBtn.src="./images/5056750251537355865.svg";
+            }
         productList.appendChild(product);
-    
     }
 }
